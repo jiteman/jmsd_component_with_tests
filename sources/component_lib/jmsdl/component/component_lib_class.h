@@ -8,7 +8,7 @@ namespace jmsdl {
 namespace component {
 
 
-class JMSD_COMPONENT_LIB_LIBRARY_TEMPLATE_SHARED_INTERFACE Component_lib_class {
+class JMSD_COMPONENT_LIBRARY_TEMPLATE_SHARED_INTERFACE Component_lib_class {
 
 public:
 
@@ -17,22 +17,22 @@ public:
 	char const *say_component_lib_hello() const noexcept;
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-public:
-	virtual ~Component_lib_class() noexcept;
+protected:
+	virtual ~Component_lib_class() noexcept = default;
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-public:
-	Component_lib_class() noexcept;
+protected:
+	Component_lib_class() noexcept = default;
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-public:
-	Component_lib_class( const Component_lib_class &another ) noexcept;
-	const Component_lib_class &operator =( const Component_lib_class &another ) noexcept;
+private:
+	Component_lib_class( const Component_lib_class &another ) noexcept = delete;
+	const Component_lib_class &operator =( const Component_lib_class &another ) noexcept = delete;
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-public:
-	Component_lib_class( Component_lib_class &&another ) noexcept;
-	Component_lib_class &operator =( Component_lib_class &&another ) noexcept;
+private:
+	Component_lib_class( Component_lib_class &&another ) noexcept = delete;
+	Component_lib_class &operator =( Component_lib_class &&another ) noexcept = delete;
 
 // # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 private:
